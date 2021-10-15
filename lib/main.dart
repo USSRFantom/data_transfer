@@ -13,6 +13,10 @@ class MyApp extends StatelessWidget {
         ),
         body: HomePage(),
       ),
+      initialRoute: '/page2',
+      routes: {
+        '/page2': (context) => Page2(),
+      },
     );
   }
 }
@@ -23,15 +27,13 @@ class HomePage extends StatelessWidget{
       child: RaisedButton(
         onPressed: ()
             {
-              Route route = MaterialPageRoute(builder: (context) => Page2());
-              Navigator.push(context, route);
+              Navigator.pushNamed(context, '/page2');
             },
         child: Text('Жмакай'),
       ),
     );
   }
 }
-
 
 class Page2 extends StatelessWidget {
   @override
