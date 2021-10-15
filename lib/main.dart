@@ -21,8 +21,33 @@ class HomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Center(
       child: RaisedButton(
-        onPressed: (){},
+        onPressed: ()
+            {
+              Route route = MaterialPageRoute(builder: (context) => Page2());
+              Navigator.push(context, route);
+            },
         child: Text('Жмакай'),
+      ),
+    );
+  }
+}
+
+
+class Page2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Page 2'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          child: Text('Go Back'),
+        ),
       ),
     );
   }
